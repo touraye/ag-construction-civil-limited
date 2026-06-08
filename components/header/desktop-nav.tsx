@@ -12,31 +12,8 @@ import {
     navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
 import { cn } from "@/lib/utils";
+import { NAV_DATA } from "@/lib/nav-data";
 
-const NAV_DATA = [
-    {
-        title: "Our Company",
-        items: [
-            { title: "About Us", href: "/about-us" },
-            { title: "Our Leadership", href: "/our-leadership" },
-            { title: "Careers", href: "/careers" },
-        ],
-    },
-    {
-        title: "What We Do",
-        items: [
-            { title: "Services", href: "/services" },
-            { title: "Projects", href: "/projects" },
-        ],
-    },
-    {
-        title: "Insights",
-        items: [
-            { title: "Blogs", href: "/blogs" },
-            { title: "Case Studies", href: "/case-studies" },
-        ],
-    },
-];
 
 export function DesktopNav({ scrolled }: { scrolled: boolean }) {
     return (

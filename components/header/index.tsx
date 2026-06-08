@@ -104,7 +104,7 @@ export default function Header() {
                         >
                             <Menu className={cn(
                                 "h-6 w-6",
-                                scrolled ? "text-slate-900 dark:text-white" : "text-slate-900 dark:text-white"
+                                scrolled ? "text-slate-900 dark:text-white" : "text-white dark:text-white"
                             )} />
                         </Button>
                     </div>
@@ -116,6 +116,7 @@ export default function Header() {
             <MobileNav
                 isOpen={mobileMenuOpen}
                 onClose={() => setMobileMenuOpen(false)}
+                scrolled={scrolled}
             />
         </>
     );
