@@ -12,37 +12,16 @@ import {
     AccordionTrigger,
 } from "@/components/ui/accordion";
 import { Button } from "@/components/ui/button";
+import { NAV_DATA } from "@/lib/nav-data";
 
 interface MobileNavProps {
     isOpen: boolean;
     onClose: () => void;
+    scrolled: boolean;
 }
 
-const NAV_DATA = [
-    {
-        title: "Company",
-        items: [
-            { title: "About Us", href: "/about" },
-            { title: "Team Members", href: "/team" },
-        ],
-    },
-    {
-        title: "Who We Are",
-        items: [
-            { title: "Services", href: "/services" },
-            { title: "Projects", href: "/projects" },
-        ],
-    },
-    {
-        title: "Insights",
-        items: [
-            { title: "Blogs", href: "/blogs" },
-            { title: "Case Studies", href: "/case-studies" },
-        ],
-    },
-];
 
-export function MobileNav({ isOpen, onClose }: MobileNavProps) {
+export function MobileNav({ isOpen, onClose, scrolled }: MobileNavProps) {
     // Prevent body scrolling when the menu is open
     useEffect(() => {
         if (isOpen) {
@@ -75,7 +54,7 @@ export function MobileNav({ isOpen, onClose }: MobileNavProps) {
                         animate={{ x: 0 }}
                         exit={{ x: "100%" }}
                         transition={{ type: "tween", duration: 0.4, ease: [ 0.22, 1, 0.36, 1 ] }}
-                        className="fixed inset-y-0 right-0 z-50 w-full max-w-sm flex flex-col bg-white dark:bg-slate-950 shadow-2xl lg:hidden"
+                        className="fixed inset-y-0 right-0 z-50 w-full max-w-sm flex flex-col bg-white dark:bg-white shadow-2xl lg:hidden"
                     >
                         {/* Header / Close Button */}
                         <div className="flex items-center justify-between p-6 border-b dark:border-slate-800">
