@@ -60,7 +60,7 @@ export default function Header() {
                                     priority
                                 />
                                 {/* Fallback inline SVG to match the provided AG-CCC design for testing */}
-                                <div className="hidden absolute inset-0 text-[#00d074] z-10 flex items-center justify-center">
+                                <div className="hidden absolute inset-0 text-[#00103A] z-10 flex items-center justify-center">
                                     <svg viewBox="0 0 100 100" fill="currentColor" className="w-8 h-8">
                                         <path d="M50 0C22.4 0 0 22.4 0 50s22.4 50 50 50 50-22.4 50-50S77.6 0 50 0zm0 85C30.7 85 15 69.3 15 50S30.7 15 50 15s35 15.7 35 35-15.7 35-35 35z" />
                                         <path d="M70 30L30 70" stroke="currentColor" strokeWidth="8" strokeLinecap="round" />
@@ -85,7 +85,7 @@ export default function Header() {
                     <div className="flex flex-1 justify-end items-center gap-4 z-50">
                         {/* Desktop CTA */}
                         <Button
-                            className="hidden lg:flex bg-[#0056e0] hover:bg-[#0048c2] text-white px-6 py-4 font-medium rounded-md transition-all group items-center gap-2"
+                            className="hidden lg:flex bg-[#00103A] hover:bg-[#00103A]/90 text-white px-6 py-[1.2rem] text-base font-semibold tracking-wide shadow-medium rounded-md transition-all group items-center gap-2"
                             asChild
                         >
                             <Link href="/contact">

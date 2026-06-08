@@ -65,7 +65,7 @@ export default function Hero() {
             >
                 <motion.span
                     variants={itemVariants}
-                    className="mb-4 text-sm font-medium tracking-wide text-[#f5a623] md:text-base uppercase"
+                    className="mb-4 text-sm font-medium tracking-wide text-[#FF5E14] md:text-base uppercase"
                 >
                     Construction & Project Law
                 </motion.span>
@@ -92,7 +92,7 @@ export default function Hero() {
                 >
                     <Button
                         size="lg"
-                        className="bg-[#0056e0] hover:bg-[#0048c2] text-white px-8 py-6 text-base font-semibold rounded-full border-0 transition-all shadow-lg hover:shadow-[#0056e0]/25"
+                        className="bg-[#00103A] hover:bg-[#00103A]/90 hover:text-white text-white px-8 py-6 text-base font-semibold rounded-full border-white/40 transition-all shadow-lg hover:shadow-[#00103A]/25"
                         asChild
                     >
                         <Link href="/consultation">Request a Consultation</Link>
@@ -101,7 +101,7 @@ export default function Hero() {
                     <Button
                         size="lg"
                         variant="outline"
-                        className="bg-transparent border-white/40 text-white hover:bg-white/10 hover:text-white px-8 py-6 text-base font-semibold rounded-full transition-all backdrop-blur-sm"
+                        className="bg-[#FF5E14] border-white/40 text-white hover:bg-[#e8530e]hover:text-white px-8 py-6 text-base font-semibold rounded-full transition-all backdrop-blur-sm"
                         asChild
                     >
                         <Link href="/experience">View Our Experience</Link>
