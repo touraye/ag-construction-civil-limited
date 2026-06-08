@@ -1,8 +1,10 @@
 import AboutUs from "@/components/about-us";
+import Faq from "@/components/faq";
 import FeaturedProjects from "@/components/featured-projects";
 import Hero from "@/components/hero";
 import HowWeWork from "@/components/how-we-work";
 import Services from "@/components/service";
+import Testimonials from "@/components/testimonials";
 import { WorksWith } from "@/components/works-with";
 
 export default function Home() {
@@ -25,6 +27,12 @@ export default function Home() {
 
       {/* Featured Projects section */}
       <FeaturedProjects />
+
+      {/* Testimonials section */}
+      <Testimonials />
+
+      {/* FAQ section */}
+      <Faq />
 
     </>
   );
