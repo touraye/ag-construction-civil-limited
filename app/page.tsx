@@ -1,4 +1,5 @@
 import AboutUs from "@/components/about-us";
+import FeaturedProjects from "@/components/featured-projects";
 import Hero from "@/components/hero";
 import HowWeWork from "@/components/how-we-work";
 import Services from "@/components/service";
@@ -21,6 +22,9 @@ export default function Home() {
 
       {/* How We Works Section */}
       <HowWeWork />
+
+      {/* Featured Projects section */}
+      <FeaturedProjects />
 
     </>
   );
