@@ -85,7 +85,7 @@ export default function Header() {
                     <div className="flex flex-1 justify-end items-center gap-4 z-50">
                         {/* Desktop CTA */}
                         <Button
-                            className="hidden lg:flex bg-[#00103A] hover:bg-[#00103A]/90 text-white px-6 py-[1.2rem] text-base font-semibold tracking-wide shadow-medium rounded-md transition-all group items-center gap-2"
+                            className="hidden lg:flex bg-[#FF5E14] hover:bg-[#e8530e]/90 text-white px-6 py-[1.2rem] text-base font-semibold tracking-wide shadow-medium rounded-md transition-all group items-center gap-2"
                             asChild
                         >
                             <Link href="/contact">
