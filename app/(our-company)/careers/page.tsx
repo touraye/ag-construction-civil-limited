@@ -18,10 +18,10 @@ export default function Careers() {
                         </span>
                     </>
                 }
-                description="Join a team of visionaries, engineers, and builders. At Conztru, we don't just construct world-class infrastructure—we build lasting careers, foster continuous growth, and empower our people to leave a mark on the world."
+                description="Join a team of visionaries, engineers, and builders. At AG Constructions, we don't just construct world-class infrastructure—we build lasting careers, foster continuous growth, and empower our people to leave a mark on the world."
                 backgroundImage="https://images.unsplash.com/photo-1504307651254-35680f356f12?q=80&w=1920&auto=format&fit=crop" // Construction team reviewing plans
                 primaryCta={{ label: "View Open Roles", href: "#open-roles" }}
-                secondaryCta={{ label: "Life at Conztru", href: "#culture" }}
+                secondaryCta={{ label: "Life at AG Constructions", href: "#culture" }}
             />
 
             {/* Benefits Section */}

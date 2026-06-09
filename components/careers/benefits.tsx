@@ -32,7 +32,7 @@ export default function Benefits() {
                     <div className="flex items-center justify-center gap-3 mb-4">
                         <div className="w-6 h-[2px] bg-[#FF5E14]" />
                         <span className="text-[#00103A] font-medium tracking-wide text-sm uppercase">
-                            Life at Conztru
+                            Life at AG Constructions
                         </span>
                         <div className="w-6 h-[2px] bg-[#FF5E14]" />
                     </div>
