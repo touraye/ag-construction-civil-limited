@@ -3,6 +3,7 @@ import Faq from "@/components/faq";
 import FeaturedProjects from "@/components/featured-projects";
 import Hero from "@/components/hero";
 import HowWeWork from "@/components/how-we-work";
+import ProjectProcess from "@/components/project/project-process";
 import Services from "@/components/service";
 import Testimonials from "@/components/testimonials";
 import { WorksWith } from "@/components/works-with";
@@ -23,7 +24,9 @@ export default function Home() {
       <Services />
 
       {/* How We Works Section */}
-      <HowWeWork />
+      {/* <HowWeWork /> */}
+      {/* Project Process Section */}
+      <ProjectProcess showLandmark={false} />
 
       {/* Featured Projects section */}
       <FeaturedProjects />
