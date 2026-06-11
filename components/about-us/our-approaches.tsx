@@ -106,7 +106,7 @@ export default function OurApproaches() {
                     >
                         {/* Background Image */}
                         <Image
-                            src="https://images.unsplash.com/photo-1541888087405-1886cc86d526?q=80&w=1200&auto=format&fit=crop" // Replace with your actual video thumbnail
+                            src="/assets/image/how-we-video-cover.webp"
                             alt="Construction site team"
                             fill
                             className="object-cover transition-transform duration-700 group-hover:scale-105"
