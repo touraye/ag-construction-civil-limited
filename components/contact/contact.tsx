@@ -76,7 +76,7 @@ export default function ContactSection() {
                                 </div>
                                 <div>
                                     <h4 className="text-[#00103A] font-bold text-lg mb-1">Headquarters</h4>
-                                    <p className="text-slate-500">2464 Royal Ln. Mesa,<br />New Jersey 45463</p>
+                                    <p className="text-slate-500">2464 Market Junction. Sanchaba,<br />Jam City 45463</p>
                                 </div>
                             </motion.div>
 
@@ -86,8 +86,8 @@ export default function ContactSection() {
                                     <Phone className="w-6 h-6 text-[#00103A] group-hover:text-[#FF5E14] transition-colors" />
                                 </div>
                                 <div className="flex flex-col gap-1 mt-1">
-                                    <a href="tel:0000000000" className="text-slate-500 hover:text-[#FF5E14] font-medium transition-colors">(000) 000-0000</a>
-                                    <a href="mailto:contact@conztru.com" className="text-slate-500 hover:text-[#FF5E14] font-medium transition-colors">contact@conztru.com</a>
+                                    <a href="tel:0000000000" className="text-slate-500 hover:text-[#FF5E14] font-medium transition-colors">(+220) 379 3900</a>
+                                    <a href="mailto:contact@agconstructions.com" className="text-slate-500 hover:text-[#FF5E14] font-medium transition-colors">contact@conztru.com</a>
                                 </div>
                             </motion.div>
 
