@@ -1,9 +1,26 @@
+import ProjectHero from "@/components/project/project-hero";
+import ProjectsListing from "@/components/project/project-listing";
+import Testimonials from "@/components/testimonials";
+import Faq from "@/components/faq";
+import ProjectProcess from "@/components/project/project-process";
+
 export default function Projects() {
     return (
         <div>
-            <h1>Our Projects</h1>
-            <p>Explore the innovative projects that define our work.</p>
-            {/* Add more content about the projects here */}
+            {/* Project Hero Section */}
+            <ProjectHero />
+
+            {/* Project Listing Section */}
+            <ProjectsListing />
+
+            {/* Project Process Section */}
+            <ProjectProcess showLandmark={false} />
+
+            {/* Testimonials Section */}
+            <Testimonials />
+
+            {/* FAQ Section */}
+            <Faq />
         </div>
     );
 }
