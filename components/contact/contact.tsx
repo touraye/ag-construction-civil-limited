@@ -86,8 +86,8 @@ export default function ContactSection() {
                                     <Phone className="w-6 h-6 text-[#00103A] group-hover:text-[#FF5E14] transition-colors" />
                                 </div>
                                 <div className="flex flex-col gap-1 mt-1">
-                                    <a href="tel:0000000000" className="text-slate-500 hover:text-[#FF5E14] font-medium transition-colors">(+220) 379 3900</a>
-                                    <a href="mailto:contact@agconstructions.com" className="text-slate-500 hover:text-[#FF5E14] font-medium transition-colors">contact@conztru.com</a>
+                                    <a href="tel:0000000000" className="text-slate-500 hover:text-[#FF5E14] font-medium transition-colors">(+220) 379-3900</a>
+                                    <a href="mailto:agconstruction@gmail.com" className="text-slate-500 hover:text-[#FF5E14] font-medium transition-colors">agconstruction@gmail.com</a>
                                 </div>
                             </motion.div>
 
