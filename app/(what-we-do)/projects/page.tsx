@@ -14,7 +14,7 @@ export default function Projects() {
             <ProjectsListing />
 
             {/* Project Process Section */}
-            <ProjectProcess showLandmark={false} />
+            <ProjectProcess showLandmark={true} />
 
             {/* Testimonials Section */}
             <Testimonials />
