@@ -99,7 +99,7 @@ export default function AboutUs() {
     };
 
     return (
-        <section className="w-full bg-white py-20 lg:py-32 dark:bg-slate-950 overflow-hidden">
+        <section className="w-full bg-white py-20 lg:py-32 dark:bg-slate-950 overflow-hidden transition-colors duration-300">
             <div className="mx-auto max-w-7xl px-6 lg:px-8">
 
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-12 items-center">
@@ -109,26 +109,28 @@ export default function AboutUs() {
                         variants={containerVariants}
                         initial="hidden"
                         whileInView="visible"
-                        viewport={{ once: false, margin: "-10%" }} // Re-animates text on scroll as well
+                        viewport={{ once: false, margin: "-10%" }}
                         className="lg:col-span-6 flex flex-col justify-center"
                     >
-                        {/* Eyebrow */}
-                        <motion.div variants={itemVariants} className="flex items-center gap-1 mb-6">
-                            {/* <span className="text-sm font-semibold text-slate-900 dark:text-white">
+                        {/* Consistent Eyebrow Design */}
+                        <motion.div variants={itemVariants} className="flex items-center gap-3 mb-6">
+                            <div className="w-6 h-[2px] bg-[#FF5E14]" />
+                            <span className="text-[#00103A] font-medium tracking-wide text-sm uppercase">
                                 About Us
-                            </span> */}
-                            {/* <ArrowUpRight className="w-4 h-4 text-slate-900 dark:text-white" /> */}
+                            </span>
+                            <div className="w-6 h-[2px] bg-[#FF5E14]" />
                         </motion.div>
 
                         {/* Heading */}
                         <motion.h2
                             variants={itemVariants}
-                            className="text-4xl lg:text-5xl font-medium tracking-tight text-slate-900 dark:text-white mb-10"
-                        >
-                            Process-led
-                            <br />
-                            <span className="text-slate-400">We Design It. We Build It. We Stand Behind It.
-</span> 
+                            className="text-4xl lg:text-5xl font-medium tracking-tight text-slate-900 dark:text-white mb-8"
+                        >  
+                            <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-[#00103A] mb-4">
+                                We Design It. <span className="text-[#FF5E14] font-light">We Build It.</span>
+                                <br />
+                                We Stand Behind It.
+                            </h2>                                
                         </motion.h2>
 
                         {/* Paragraphs */}
@@ -141,14 +143,14 @@ export default function AboutUs() {
                             </p>
                         </motion.div>
 
-                        {/* CTA Button */}
+                        {/* CTA Button (Updated to match Hero pill-shape) */}
                         <motion.div variants={itemVariants} className="mb-16">
                             <Button
                                 size="lg"
-                                className="bg-[#0056e0] hover:bg-[#0048c2] text-white rounded-xl px-6 py-6 text-base shadow-lg transition-all"
+                                className="bg-[#FF5E14] hover:bg-[#FF5E14] text-white rounded-full px-8 py-6 text-base font-semibold shadow-lg transition-all group"
                             >
                                 Go to About Us Page
-                                <ArrowUpRight className="ml-2 w-5 h-5" />
+                                <ArrowUpRight className="ml-2 w-5 h-5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                             </Button>
                         </motion.div>
 
