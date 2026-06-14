@@ -79,7 +79,7 @@ export default function BlogListing() {
                                 transition={{ duration: 0.4, type: "spring", stiffness: 250, damping: 25 }}
                                 className="group relative flex flex-col bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 border border-slate-100"
                             >
-                                <Link href={`/blog/${post.slug}`} className="flex flex-col h-full">
+                                <Link href={`/blogs/${post.slug}`} className="flex flex-col h-full">
 
                                     {/* Image Container */}
                                     <div className="relative w-full aspect-[16/10] overflow-hidden bg-slate-100">

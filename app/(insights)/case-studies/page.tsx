@@ -19,7 +19,7 @@ export default function CaseStudies() {
                 }
                 description="We don't just build structures; we solve complex logistical, environmental, and engineering challenges. Dive into our case studies to see how we tackle the impossible."
                 backgroundImage="https://images.unsplash.com/photo-1503387762-592deb58ef4e?q=80&w=1920&auto=format&fit=crop" // Epic structural beams/construction shot
-                primaryCta={{ label: "View All Cases", href: "#cases" }}
+                primaryCta={{ label: "View All Cases", href: "#case-studies-list" }}
             />
 
             {/* Case Studies Listing section */}

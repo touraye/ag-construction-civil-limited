@@ -24,7 +24,7 @@ export default function CaseStudiesListing() {
     }, [ activeCategory ]);
 
     return (
-        <section className="relative w-full bg-[#F5F7FA] py-20 lg:py-32 min-h-screen">
+        <section id="case-studies-list" className="relative w-full bg-[#F5F7FA] py-20 lg:py-32 min-h-screen">
             <div className="mx-auto max-w-7xl px-6 md:px-8">
 
                 {/* === Filter Bar === */}
