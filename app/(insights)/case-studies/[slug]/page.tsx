@@ -50,7 +50,7 @@ export default function CaseStudyDetailPage({ params }: { params: { slug: string
                             {cs.title}
                         </h1>
 
-                        <div className="flex items-center gap-3 text-slate-300 text-lg font-medium bg-white/10 backdrop-blur-md w-max px-5 py-2.5 rounded-full border border-white/20">
+                        <div className="flex items-center gap-3 text-slate-300 text-sm md:text-lg font-medium bg-white/10 backdrop-blur-md w-max px-5 py-2.5 rounded-full border border-white/20">
                             <Building2 className="w-5 h-5 text-[#FF5E14]" />
                             Client: <span className="text-white font-bold">{cs.client}</span>
                         </div>
