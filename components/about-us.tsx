@@ -147,7 +147,7 @@ export default function AboutUs() {
                         <motion.div variants={itemVariants} className="mb-16">
                             <Button
                                 size="lg"
-                                className="bg-[#FF5E14] hover:bg-[#FF5E14] text-white rounded-full px-8 py-6 text-base font-semibold shadow-lg transition-all group"
+                                className="bg-[#FF5E14] hover:bg-[#e8530e] text-white rounded-full px-8 py-6 text-base font-semibold shadow-lg transition-all group"
                             >
                                 Go to About Us Page
                                 <ArrowUpRight className="ml-2 w-5 h-5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />

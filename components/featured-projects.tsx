@@ -161,12 +161,32 @@ export default function FeaturedProjects() {
                     Featured Projects
                 </motion.h2> */}
 
-				<motion.h2
+				{/* Consistent Eyebrow Design */}
+					<motion.div variants={itemVariants} className="flex items-center gap-3 mb-6">
+						<div className="w-6 h-[2px] bg-[#FF5E14]" />
+						<span className="text-[#00103A] font-medium tracking-wide text-sm uppercase">
+							Featured Projects
+						</span>
+						<div className="w-6 h-[2px] bg-[#FF5E14]" />
+				</motion.div>
+				
+					{/*  */}
+				{/* <motion.h2
 					variants={itemVariants}
 					className='text-4xl lg:text-5xl font-medium tracking-tight text-slate-900 dark:text-white mb-10'>
-					Our
+					Hand Pick
 					<br />
-					<span className='text-slate-400'>Featured Projects</span>
+					<span className='text-slate-400'>Projects</span>
+				</motion.h2> */}
+
+				<motion.h2
+					variants={itemVariants}
+					className='text-4xl lg:text-5xl font-bold tracking-tight text-[#00103A] mb-8'>
+					Hand Pick
+					<br />
+					<span className='text-[#FF5E14]'>
+						Projects
+					</span>
 				</motion.h2>
 
 				{/* Staggered Cards Container */}
@@ -233,7 +253,7 @@ export default function FeaturedProjects() {
 										{/* Red CTA Arrow Button Animated */}
 										<motion.div
 											variants={buttonScaleVariants}
-											className='absolute bottom-6 right-6 w-10 h-10 rounded-full bg-[#0056e0] text-white flex items-center justify-center shadow-lg z-20 pointer-events-none'>
+											className='absolute bottom-6 right-6 w-10 h-10 rounded-full bg-[#FF5E14] text-white flex items-center justify-center shadow-lg z-20 pointer-events-none'>
 											<ArrowUpRight className='w-5 h-5' />
 										</motion.div>
 									</Card>
@@ -253,11 +273,11 @@ export default function FeaturedProjects() {
 					{/* Custom Spring Animated Progress Track */}
 					<div className='relative w-full h-[10px] bg-[#fcd5d7] rounded-r-full overflow-hidden flex items-center'>
 						<motion.div
-							className='absolute left-0 top-0 h-full bg-[#0056e0] rounded-r-full'
+							className='absolute left-0 top-0 h-full bg-[#FF5E14] rounded-r-full'
 							animate={{ width: `${Math.max(scrollProgress, 5)}%` }}
 							transition={{ type: 'spring', stiffness: 300, damping: 30 }}
 						/>
-						<div className='absolute right-0 text-[#0056e0] pr-1 hidden md:block z-10'>
+						<div className='absolute right-0 text-[#FF5E14] pr-1 hidden md:block z-10'>
 							<Play className='w-3 h-3 fill-current' />
 						</div>
 					</div>
@@ -266,19 +286,19 @@ export default function FeaturedProjects() {
 					<div className='flex items-center gap-4'>
 						<button
 							onClick={scrollLeft}
-							className='w-8 h-8 rounded-full bg-[#fce7e8] hover:bg-[#fcd5d7] text-[#0056e0] flex items-center justify-center transition-colors disabled:opacity-50'
+							className='w-8 h-8 rounded-full bg-[#fce7e8] hover:bg-[#fcd5d7] text-[#0F1836] flex items-center justify-center transition-colors disabled:opacity-50'
 							disabled={scrollProgress === 0}
 							aria-label='Previous projects'>
 							<ArrowLeft className='w-4 h-4' />
 						</button>
 
-						<span className='text-[#0056e0] text-sm font-medium tabular-nums'>
+						<span className='text-[#0F1836] text-sm font-medium tabular-nums'>
 							{firstVisible} – {lastVisible} of {totalItems}
 						</span>
 
 						<button
 							onClick={scrollRight}
-							className='w-8 h-8 rounded-full bg-[#fce7e8] hover:bg-[#fcd5d7] text-[#0056e0] flex items-center justify-center transition-colors disabled:opacity-50'
+							className='w-8 h-8 rounded-full bg-[#fce7e8] hover:bg-[#fcd5d7] text-[#0F1836] flex items-center justify-center transition-colors disabled:opacity-50'
 							disabled={scrollProgress >= 99}
 							aria-label='Next projects'>
 							<ArrowRight className='w-4 h-4' />

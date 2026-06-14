@@ -53,6 +53,7 @@ export default function Faq() {
                         <span className="text-slate-500 font-medium tracking-wide text-sm">
                             FAQs
                         </span>
+                        <div className="w-6 h-[2px] bg-[#FF5E14]" />
                     </div>
                     <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-[#00103A] mb-2">
                         Question? <span className="text-[#FF5E14]">Look here.</span>

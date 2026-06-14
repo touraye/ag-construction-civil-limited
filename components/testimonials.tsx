@@ -99,9 +99,10 @@ export default function Testimonials() {
                 >
                     <div className="flex items-center justify-center gap-3 mb-4">
                         <div className="w-6 h-[2px] bg-[#FF5E14]" />
-                        <span className="text-slate-300 font-medium tracking-wide text-sm">
+                        <span className="text-slate-300 font-light tracking-wide text-sm uppercase">
                             Testimonials
                         </span>
+                        <div className="w-6 h-[2px] bg-[#FF5E14]" />
                     </div>
                     <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-white mb-2">
                         Experience Shared by <br className="hidden sm:block" />
