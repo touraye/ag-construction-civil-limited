@@ -117,8 +117,7 @@ export default function AboutUs() {
                             <div className="w-6 h-[2px] bg-[#FF5E14]" />
                             <span className="text-[#00103A] font-medium tracking-wide text-sm uppercase">
                                 About Us
-                            </span>
-                            <div className="w-6 h-[2px] bg-[#FF5E14]" />
+                            </span>                            
                         </motion.div>
 
                         {/* Heading */}

@@ -67,7 +67,7 @@ export default function Hero() {
                     {/* Eyebrow */}
                     <motion.div variants={itemVariants} className="flex items-center gap-3 mb-6">
                         <div className="w-8 h-[2px] bg-[#FF5E14]" />
-                        <span className="text-[#FF5E14] font-bold tracking-widest uppercase text-sm">
+                        <span className="text-[#FF5E14] font-medium tracking-widest uppercase text-sm">
                             Construction & Project Law
                         </span>
                         <div className="w-8 h-[2px] bg-[#FF5E14]" />

@@ -143,10 +143,9 @@ export default function Services() {
 							{/* Consistent Eyebrow */}
 							<div className='flex items-center gap-3 mb-6'>
 								<div className='w-6 h-[2px] bg-[#FF5E14]' />
-								<span className='text-[#00103A] font-bold tracking-widest uppercase text-sm'>
+								<span className='text-[#00103A] font-medium tracking-widest uppercase text-sm'>
 									Our Services
-								</span>
-								<div className='w-6 h-[2px] bg-[#FF5E14]' />
+								</span>								
 							</div>
 
 							<motion.h2

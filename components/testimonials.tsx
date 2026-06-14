@@ -99,7 +99,7 @@ export default function Testimonials() {
                 >
                     <div className="flex items-center justify-center gap-3 mb-4">
                         <div className="w-6 h-[2px] bg-[#FF5E14]" />
-                        <span className="text-slate-300 font-light tracking-wide text-sm uppercase">
+                        <span className="text-slate-300 font-light tracking-widest text-sm uppercase">
                             Testimonials
                         </span>
                         <div className="w-6 h-[2px] bg-[#FF5E14]" />
