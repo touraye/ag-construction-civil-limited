@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React, { useMemo } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import {
@@ -8,27 +8,51 @@ import {
     CircleDashed, Hammer, ExternalLink, Mail, Phone
 } from "lucide-react";
 import { FaLinkedinIn, FaXTwitter, FaInstagram, FaFacebookF } from "react-icons/fa6";
-import { Project, PartnerSocial } from "@/types"; 
-import { DUMMY_PROJECT } from "@/data/projects";
 
-// Utility to render correct social icon based on string name
+import { Project, PartnerSocial } from "@/types";
+import { ALL_PROJECTS } from "@/data/projects"; // <--- SINGLE DATA SOURCE
+import { DUMMY_PROJECT } from "@/data/projects"; // Assuming this is the detailed mockup we use for this example
+
+// --- Extracted Components ---
+import SimilarProjects from "@/components/project/similar-projects";
+import ProjectCTA from "@/components/project/project-cta";
+
+// --- Utility Functions ---
 const renderSocialIcon = (social: PartnerSocial) => {
     const name = social.name.toLowerCase();
     if (name.includes("linkedin")) return <FaLinkedinIn className="w-4 h-4" />;
     if (name.includes("twitter") || name.includes("x")) return <FaXTwitter className="w-4 h-4" />;
     if (name.includes("instagram")) return <FaInstagram className="w-4 h-4" />;
     if (name.includes("facebook")) return <FaFacebookF className="w-4 h-4" />;
-    return <ExternalLink className="w-4 h-4" />; // Fallback
+    return <ExternalLink className="w-4 h-4" />;
 };
 
-// Formatter for currency & dates
 const formatCurrency = (amount: number) => new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 0 }).format(amount);
 const formatDate = (dateStr: string) => new Intl.DateTimeFormat('en-US', { month: 'short', year: 'numeric' }).format(new Date(dateStr));
 
 export default function ProjectDetailPage({ params }: { params: { slug: string } }) {
-    // In a real app, you would fetch the project based on params.slug
-    // For this example, we use the dummy data.
+    // 1. Get the current project
+    // In production: const project = ALL_PROJECTS.find(p => p.slug === params.slug);
     const project: Project = DUMMY_PROJECT;
+
+    // 2. Filter logic for Similar Projects (Single Data Source)
+    const similarProjects = useMemo(() => {
+        // Find projects of the same type, excluding the current one
+        let filtered = ALL_PROJECTS.filter(
+            (p) => p.type === project.type && p.id !== project.id
+        );
+
+        // If we don't have 3 of the same type, pad it with other recent projects
+        if (filtered.length < 3) {
+            const padding = ALL_PROJECTS.filter(
+                (p) => p.id !== project.id && !filtered.includes(p)
+            );
+            filtered = [ ...filtered, ...padding ];
+        }
+
+        // Return exactly 3 projects for the UI grid
+        return filtered.slice(0, 3);
+    }, [ project.id, project.type ]);
 
     return (
         <main className="flex min-h-screen flex-col w-full bg-white dark:bg-slate-950">
@@ -86,19 +110,19 @@ export default function ProjectDetailPage({ params }: { params: { slug: string }
                 >
                     <div className="flex flex-col gap-1">
                         <span className="flex items-center gap-1.5 text-slate-500 text-xs md:text-sm font-semibold uppercase tracking-wider">
-                            <Building2 className="w-4 h-4 text-[#0056e0]" /> Client
+                            <Building2 className="w-4 h-4 text-[#00103A]" /> Client
                         </span>
                         <span className="font-bold text-slate-900 dark:text-white text-lg">{project.client || "Confidential"}</span>
                     </div>
                     <div className="flex flex-col gap-1">
                         <span className="flex items-center gap-1.5 text-slate-500 text-xs md:text-sm font-semibold uppercase tracking-wider">
-                            <Ruler className="w-4 h-4 text-[#0056e0]" /> Area
+                            <Ruler className="w-4 h-4 text-[#00103A]" /> Area
                         </span>
                         <span className="font-bold text-slate-900 dark:text-white text-lg">{project.area_sqm?.toLocaleString()} sqm</span>
                     </div>
                     <div className="flex flex-col gap-1">
                         <span className="flex items-center gap-1.5 text-slate-500 text-xs md:text-sm font-semibold uppercase tracking-wider">
-                            <Calendar className="w-4 h-4 text-[#0056e0]" /> Commenced
+                            <Calendar className="w-4 h-4 text-[#00103A]" /> Commenced
                         </span>
                         <span className="font-bold text-slate-900 dark:text-white text-lg">{formatDate(project.started_date)}</span>
                     </div>
@@ -117,14 +141,12 @@ export default function ProjectDetailPage({ params }: { params: { slug: string }
 
                     {/* Left Col: Description, Tags, Gallery */}
                     <div className="lg:col-span-7 flex flex-col gap-16">
-                        {/* Description */}
                         <div>
                             <h3 className="text-3xl font-bold text-slate-900 dark:text-white mb-6">Project Overview</h3>
                             <p className="text-slate-600 dark:text-slate-400 text-lg leading-relaxed">
                                 {project.description}
                             </p>
 
-                            {/* Tags */}
                             {project.tags && (
                                 <div className="flex flex-wrap gap-2 mt-8">
                                     {project.tags.map(tag => (
@@ -136,7 +158,6 @@ export default function ProjectDetailPage({ params }: { params: { slug: string }
                             )}
                         </div>
 
-                        {/* Gallery */}
                         {project.gallery && project.gallery.length > 0 && (
                             <div>
                                 <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-6">Project Gallery</h3>
@@ -171,7 +192,6 @@ export default function ProjectDetailPage({ params }: { params: { slug: string }
                                             key={idx}
                                             className="relative pl-8"
                                         >
-                                            {/* Timeline Node Icon */}
                                             <div className={`absolute -left-[17px] top-0 w-8 h-8 rounded-full flex items-center justify-center border-4 border-[#F8FAFC] dark:border-slate-900 shadow-sm transition-colors ${isCompleted ? 'bg-emerald-500 text-white' :
                                                     isInProgress ? 'bg-[#FF5E14] text-white' :
                                                         'bg-slate-200 dark:bg-slate-800 text-slate-400'
@@ -184,7 +204,6 @@ export default function ProjectDetailPage({ params }: { params: { slug: string }
                                                     ) : <CircleDashed className="w-4 h-4" />}
                                             </div>
 
-                                            {/* Timeline Content */}
                                             <div className="flex flex-col">
                                                 <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-1">
                                                     <h4 className={`text-lg font-bold ${isInProgress ? 'text-[#FF5E14]' : 'text-slate-900 dark:text-white'}`}>
@@ -201,7 +220,6 @@ export default function ProjectDetailPage({ params }: { params: { slug: string }
                                                     </p>
                                                 )}
 
-                                                {/* Active Pulser */}
                                                 {isInProgress && (
                                                     <span className="inline-flex items-center gap-2 text-[#FF5E14] text-xs font-bold tracking-widest uppercase mt-4">
                                                         <span className="relative flex h-2.5 w-2.5">
@@ -255,7 +273,6 @@ export default function ProjectDetailPage({ params }: { params: { slug: string }
                                             </h3>
                                         </div>
 
-                                        {/* Optional Partner Logo Fallback */}
                                         <div className="w-12 h-12 rounded-xl bg-[#F8FAFC] dark:bg-slate-900 border border-slate-100 dark:border-slate-800 flex items-center justify-center shrink-0">
                                             {partner.logo ? (
                                                 <img src={partner.logo} alt={partner.name} className="w-8 h-8 object-contain" />
@@ -265,7 +282,6 @@ export default function ProjectDetailPage({ params }: { params: { slug: string }
                                         </div>
                                     </div>
 
-                                    {/* Partner Contacts / Links */}
                                     <div className="flex flex-wrap items-center gap-3 mt-auto pt-4 border-t border-slate-100 dark:border-slate-800">
                                         {partner.website && (
                                             <a href={partner.website} target="_blank" rel="noopener noreferrer" className="w-8 h-8 rounded-full bg-slate-100 dark:bg-slate-900 flex items-center justify-center text-slate-600 dark:text-slate-400 hover:text-[#0056e0] transition-colors">
@@ -289,6 +305,12 @@ export default function ProjectDetailPage({ params }: { params: { slug: string }
                     </div>
                 </section>
             )}
+
+            {/* === 5. SIMILAR PROJECTS === */}
+            <SimilarProjects projects={similarProjects} />
+
+            {/* === 6. CALL TO ACTION === */}
+            <ProjectCTA />
 
         </main>
     );

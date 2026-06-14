@@ -1,4 +1,4 @@
-import { Project } from "@/types";
+import { Project, ProjectStatus, } from "@/types";
 
 export const FEATURED_PROJECTS: Project[] = [
     {
@@ -272,3 +272,4 @@ export const DUMMY_PROJECT: Project = {
         }
     ]
 };
+
