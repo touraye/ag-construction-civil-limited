@@ -19,10 +19,18 @@ export type TimelinePhase = {
     description?: string
 }
 
+export type PartnerSocial = {
+    name: string    // e.g. facebook, instagram, tiktok, etc
+    logo: string
+}
+
 export type Partner = {
     name: string
+    contact_info?: string // e.g. email or phone number
     role: string          // e.g. "Structural Engineer", "Architect", "MEP Consultant"
     logo?: string         // URL or Supabase Storage path
+    website?: string      // website for a partner
+    socials?: PartnerSocial[]
 }
 
 export type Project = {

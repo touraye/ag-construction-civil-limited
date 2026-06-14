@@ -186,3 +186,89 @@ export const ALL_PROJECTS: Project[] = [
         gallery: [], partners: [], timeline: [],
     },
 ];
+
+
+
+export const DUMMY_PROJECT: Project = {
+    id: "p-aurora",
+    name: "Aurora Eco-Tower",
+    slug: "aurora-eco-tower",
+    type: "commercial",
+    description: "The Aurora Eco-Tower represents the pinnacle of modern sustainable commercial architecture. Spanning 45 stories, it integrates a smart-glass facade, self-sustaining rainwater harvesting, and state-of-the-art structural engineering to achieve LEED Platinum certification. This project sets a new benchmark for corporate headquarters in dense urban environments.",
+    location: "London, UK",
+    started_date: "2024-03-15",
+    status: "in-progress",
+    featured: true,
+    cover_img: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=1920&auto=format&fit=crop",
+    gallery: [
+        "https://images.unsplash.com/photo-1541888087405-1886cc86d526?q=80&w=800&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1503387762-592deb58ef4e?q=80&w=800&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1581094288338-2314dddb7ece?q=80&w=800&auto=format&fit=crop"
+    ],
+    client: "Global Horizon Developments",
+    area_sqm: 125000,
+    value_usd: 450000000,
+    tags: [ "high-rise", "LEED-platinum", "smart-building", "commercial" ],
+    timeline: [
+        {
+            phase: "Design & Feasibility",
+            startDate: "2023-01-10",
+            endDate: "2023-08-30",
+            status: "completed",
+            description: "Completed comprehensive environmental impact studies, zoning approvals, and final architectural blueprints."
+        },
+        {
+            phase: "Foundation & Excavation",
+            startDate: "2024-03-15",
+            endDate: "2024-11-20",
+            status: "completed",
+            description: "Deep foundation piling and subterranean parking levels established."
+        },
+        {
+            phase: "Structural Framing",
+            startDate: "2024-12-01",
+            endDate: "2026-02-15",
+            status: "in-progress",
+            description: "Currently erecting the primary steel framework. Floors 1 through 25 are complete."
+        },
+        {
+            phase: "Facade & MEP Integration",
+            startDate: "2025-06-01",
+            endDate: "2026-10-01",
+            status: "pending",
+            description: "Installation of the smart-glass exterior and mechanical, electrical, and plumbing systems."
+        },
+        {
+            phase: "Final Handover",
+            startDate: "2027-01-15",
+            endDate: "2027-02-28",
+            status: "pending",
+            description: "Final safety inspections, interior finishings, and official client handover."
+        }
+    ],
+    partners: [
+        {
+            name: "Apex Architecture Group",
+            role: "Lead Architect",
+            contact_info: "contact@apexarch.com",
+            website: "https://example.com",
+            socials: [
+                { name: "linkedin", logo: "linkedin" },
+                { name: "instagram", logo: "instagram" }
+            ]
+        },
+        {
+            name: "SteelCore Engineering",
+            role: "Structural Engineer",
+            contact_info: "+44 20 7946 0958",
+            website: "https://example.com",
+        },
+        {
+            name: "GreenFlow Solutions",
+            role: "MEP & Sustainability Consultant",
+            socials: [
+                { name: "twitter", logo: "twitter" }
+            ]
+        }
+    ]
+};
