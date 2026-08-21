@@ -1,18 +1,5 @@
 
 import { AuthError, AuthApiError, AuthRetryableFetchError } from '@supabase/supabase-js'
-// import { isNetworkError } from './is-network-error'
-
-// export function getErrorMessage(err: unknown, fallback = 'Something went wrong'): string {
-//     if (isNetworkError(err)) {
-//         return 'Unable to reach the server. Check your internet connection and try again.'
-//     }
-//     if (err instanceof AuthError) return err.message
-//     if (err instanceof Error) return err.message
-//     return fallback
-// }
-
-
-// lib/utils/getErrorMessage.ts
 
 function isNetworkError(err: unknown): boolean {
     return err instanceof TypeError && err.message === 'Failed to fetch'
